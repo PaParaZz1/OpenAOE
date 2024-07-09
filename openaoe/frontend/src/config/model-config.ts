@@ -38,6 +38,13 @@ export const models = {
             background: 'linear-gradient(180deg, rgba(156, 206, 116, 0.15) 0%, #08be00 100%)',
         }
     },
+    'deepseek-v2': {
+        provider: 'claude',
+        webui: {
+            avatar: 'https://oss.openmmlab.com/frontend/OpenAOE/claude.svg',
+            background: 'linear-gradient(180deg, rgba(141, 90, 181, 0.15) 0%, rgba(106, 39, 123, 0.7) 53.12%, #663E9A 100%)',
+        }
+    },
     'claude-1': {
         provider: 'claude',
         webui: {

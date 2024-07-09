@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request
 
 from openaoe.backend.model.openai import OpenaiChatStreamBody
-from openaoe.backend.service.service_openai import chat_completion_stream
+from openaoe.backend.service.service_azure_openai import chat_completion_stream
 
 router = APIRouter()
 

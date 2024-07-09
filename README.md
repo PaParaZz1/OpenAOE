@@ -53,46 +53,13 @@ OpenAOE can:
 > [!TIP]
 > Require python >= 3.9
 
-We provide three different ways to run OpenAOE: `run by pip`， `run by docker` and `run by source code` as well.
-
-## Run by pip 
-### **Install**
-```shell
-pip install -U openaoe 
-```
-### **Start**
-```shell
-openaoe -f /path/to/your/config-template.yaml
-```
-
-## Run by docker
-### **Install**
-
-There are two ways to get the OpenAOE docker image by:
-1. pull the OpenAOE docker image
-```shell
-docker pull opensealion/openaoe:latest
-```
-
-2. or build a docker image
-```shell
-git clone https://github.com/internlm/OpenAOE
-cd OpenAOE
-docker build . -f docker/Dockerfile -t opensealion/openaoe:latest
-```
-
-### **Start**
-```shell
-docker run -p 10099:10099 -v /path/to/your/config-template.yaml:/app/config.yaml --name OpenAOE opensealion/openaoe:latest
-```
-
 ## Run by source code
 ### **Install**
 1. clone this project
 ```shell
 git clone https://github.com/internlm/OpenAOE
 ```
-2. [_optional_] build the frontend project when the frontend codes are changed
+2. build the frontend project when the frontend codes are changed (install node.js and npm first)
 ```shell
 cd OpenAOE/openaoe/frontend
 npm install
@@ -104,7 +71,8 @@ npm run build
 ```shell
 cd OpenAOE # this OpenAOE is the clone directory
 pip install -r openaoe/backend/requirements.txt
-python -m openaoe.main -f /path/to/your/config-template.yaml
+# add your api key in config first
+python -u -m openaoe.main -f openaoe/backend/config/config-template.yaml 
 ```
 
 
@@ -116,11 +84,6 @@ python -m openaoe.main -f /path/to/your/config-template.yaml
 > Note that, this `config-template.yaml` DOES NOT contain any API access data, you should add them by yourself.
 
 
-#  Tech Report
-> **You are always welcome to fork this project to contribute your work**
-> **and find the [TODOs in furture](docs/todo/TODO.md).**
-
-If you want to add more LLMs' APIs or features based on OpenAOE, the following info might be helpful.
 
 ## Tech Stack
 The technology stack we use includes:

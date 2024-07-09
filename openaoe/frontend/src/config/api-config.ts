@@ -26,6 +26,16 @@ const openai = {
     },
     type: 'json'
 };
+const deepseek = {
+    model: 'deepseek-chat',
+    prompt: '',
+    messages: [],
+    role_meta: {
+        user_name: 'user',
+        bot_name: 'assistant'
+    },
+    type: 'json'
+};
 
 const googlePalm = {
     model: 'chat-bison-001',
@@ -117,6 +127,10 @@ API.set('minimax', {
 API.set('openai', {
     url: `${API_PREFIX}/v1/openai/v1/text/chat-stream`,
     ...openai
+});
+API.set('deepseek', {
+    url: `${API_PREFIX}/v1/deepseek/v1/text/chat-stream`,
+    ...deepseek
 });
 API.set('google', {
     url: `${API_PREFIX}/v1/google/v1/palm/chat`,
